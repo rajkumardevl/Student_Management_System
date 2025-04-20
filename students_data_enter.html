@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Students Data Entry Form</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!-- Icon  -->
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSBut1tctK5lFw5VFtMp8CzCyptec9N3iK_Q&s">
+
+    <!-- Bootstrap Icon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="captcha.js"></script>
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+        .top_header img {
+            width: auto;
+            height: 100px;
+        }
+
+        .bg_color {
+            height: 100vh;
+            width: 100%;
+            /*gradiant background color*/
+            /*background: linear-gradient(to top, #ec82ff 0%, #cafffc 100%); */
+            overflow-y: scroll;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="bg_color list-group-item list-group-item-success rounded border  border-2 border-dark">
+                <div class="top_header text-center p-3 rounded shadow border border-2 border-dark bg-secondary text-light sticky-top mt-2">
+                    <img class="img-fluid" src="images/4 (1).png" alt="">
+                </div>
+                <div class="head ">
+                    <h2 class="text-center my-5 text-decoration-underline">
+                        <i class="bi bi-clipboard-data-fill"></i>
+                        Enter Students Data
+                    </h2>
+                </div>
+                <div class="row mx-5">
+                    <form action="insert.php" method="POST">
+                        <div class="row">
+                            <!-- Student Name  -->
+                            <div class=" mb-3 col-md-4">
+                                <label for="name" class="form-label">Student Name</label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Enter Student Name">
+                            </div>
+
+                            <!-- Roll Number  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="roll_no" class="form-label">Roll Number</label>
+                                <input type="number" class="form-control" id="roll_no" name="roll_no"
+                                    placeholder="Enter Roll Number">
+                            </div>
+
+                            <!-- father name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="father_name" class="form-label">Father Name</label>
+                                <input type="text" class="form-control" id="father_name" name="father_name"
+                                    placeholder="Enter Father Name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- mother name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="mother_name" class="form-label">Mother Name</label>
+                                <input type="text" class="form-control" id="mother_name" name="mother_name"
+                                    placeholder="Enter Mother Name">
+                            </div>
+
+                            <!-- Date of Birth  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="dob" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="dob" name="dob">
+                            </div>
+
+                            <!-- Gender in one line  -->
+                            <div class="col-md-4">
+                                <label for="gender" class="form-label ">Gender</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="female"
+                                        value="female">
+                                    <label class="form-check-label" for="female">Female</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="others"
+                                        value="others">
+                                    <label class="form-check-label" for="others">Others</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Enrollment Number  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="enroll_no" class="form-label">Enrollment Number</label>
+                                <input type="number" class="form-control" id="enroll_no" name="enroll_no"
+                                    placeholder="Enter Enrollment Number">
+                            </div>
+
+                            <!-- College Name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="college_name" class="form-label">College Name</label>
+                                <!-- select  -->
+                                <select class="form-select" aria-label="Default select example" id="college_name"
+                                    name="college_name" required>
+                                    <option value="" selected>Select College Name</option>
+                                    <option value="Sunder Deep Engineering College, Ghaziabad">Sunder Deep Engineering
+                                        College, Ghaziabad</option>
+                                    <option value="Sunder Deep College of Management & Technology, Ghaziabad">Sunder
+                                        Deep
+                                        College of Management & Technology, Ghaziabad</option>
+                                    <option value="Sunder Deep College of Engineering, Ghaziabad">Sunder Deep College of
+                                        Engineering, Ghaziabad</option>
+                                    <option value="Sunder Deep Pharmacy College, Ghaziabad">Sunder Deep Pharmacy
+                                        College,
+                                        Ghaziabad</option>
+                                    <option value="Sunder Deep College of Architecture, Ghaziabad">Sunder Deep College
+                                        of
+                                        Architecture, Ghaziabad</option>
+                                    <option value="Sunder Deep College of Hotel Management, Ghaziabad">Sunder Deep
+                                        College
+                                        of Hotel Management, Ghaziabad</option>
+                                    <option value="Sunder Deep College of Commerce, Ghaziabad">Sunder Deep College of
+                                        Commerce, Ghaziabad</option>
+                                    <option value="Sunder Deep College of Law, Ghaziabad">Sunder Deep College of Law,
+                                        Ghaziabad</option>
+                                    <option value="Sunder Deep College of Education, Ghaziabad">Sunder Deep College of
+                                        Education, Ghaziabad</option>
+                                </select>
+                            </div>
+
+                            <!-- Max Mark  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="max_mark" class="form-label">Max Mark</label>
+                                <input type="number" class="form-control" id="max_mark" name="max_mark"
+                                    placeholder="Enter Max Mark">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- First Subject Name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="first_sub_name" class="form-label">First Subject Name</label>
+                                <input type="text" class="form-control" id="first_sub_name" name="first_sub_name"
+                                    placeholder="Enter First Subject Name">
+                            </div>
+
+                            <!-- First Subject Code  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="first_sub_code" class="form-label
+                            ">First Subject Code</label>
+                                <input type="text" class="form-control" id="first_sub_code" name="first_sub_code"
+                                    placeholder="Enter First Subject Code">
+                            </div>
+
+                            <!-- First Subject Mark  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="first_sub_mark" class="form-label">First Subject Mark</label>
+                                <input type="number" class="form-control" id="first_sub_mark" name="first_sub_mark"
+                                    placeholder="Enter First Subject Mark">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Second Subject Name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="second_sub_name" class="form-label
+                            ">Second Subject Name</label>
+                                <input type="text" class="form-control" id="second_sub_name" name="second_sub_name"
+                                    placeholder="Enter Second Subject Name">
+                            </div>
+
+                            <!-- Second Subject Code  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="second_sub_code" class="form-label
+                            ">Second Subject Code</label>
+                                <input type="text" class="form-control" id="second_sub_code" name="second_sub_code"
+                                    placeholder="Enter Second Subject Code">
+                            </div>
+
+                            <!-- Second Subject Mark  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="second_sub_mark" class="form-label">Second Subject Mark</label>
+                                <input type="number" class="form-control" id="second_sub_mark" name="second_sub_mark"
+                                    placeholder="Enter Second Subject Mark">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Third Subject Name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="third_sub_name" class="form-label
+                            ">Third Subject Name</label>
+                                <input type="text" class="form-control" id="third_sub_name" name="third_sub_name"
+                                    placeholder="Enter Third Subject Name">
+                            </div>
+
+                            <!-- Third Subject Code  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="third_sub_code" class="form-label
+                            ">Third Subject Code</label>
+                                <input type="text" class="form-control" id="third_sub_code" name="third_sub_code"
+                                    placeholder="Enter Third Subject Code">
+                            </div>
+
+                            <!-- Third Subject Mark  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="third_sub_mark" class="form-label
+                            ">Third Subject Mark</label>
+                                <input type="number" class="form-control" id="third_sub_mark" name="third_sub_mark"
+                                    placeholder="Enter Third Subject Mark">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Fourth Subject Name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="fourth_sub_name" class="form-label
+                            ">Fourth Subject Name</label>
+                                <input type="text" class="form-control" id="fourth_sub_name" name="fourth_sub_name"
+                                    placeholder="Enter Fourth Subject Name">
+                            </div>
+
+                            <!-- Fourth Subject Code  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="fourth_sub_code" class="form-label
+                            ">Fourth Subject Code</label>
+                                <input type="text" class="form-control" id="fourth_sub_code" name="fourth_sub_code"
+                                    placeholder="Enter Fourth Subject Code">
+                            </div>
+
+                            <!-- Fourth Subject Mark  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="fourth_sub_mark" class="form-label
+                            ">Fourth Subject Mark</label>
+                                <input type="number" class="form-control" id="fourth_sub_mark" name="fourth_sub_mark"
+                                    placeholder="Enter Fourth Subject Mark">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Fifth Subject Name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="fifth_sub_name" class="form-label
+                            ">Fifth Subject Name</label>
+                                <input type="text" class="form-control" id="fifth_sub_name" name="fifth_sub_name"
+                                    placeholder="Enter Fifth Subject Name">
+                            </div>
+
+                            <!-- Fifth Subject Code  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="fifth_sub_code" class="form-label
+                            ">Fifth Subject Code</label>
+                                <input type="text" class="form-control" id="fifth_sub_code" name="fifth_sub_code"
+                                    placeholder="Enter Fifth Subject Code">
+                            </div>
+
+                            <!-- Fifth Subject Mark  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="fifth_sub_mark" class="form-label
+                            ">Fifth Subject Mark</label>
+                                <input type="number" class="form-control" id="fifth_sub_mark" name="fifth_sub_mark"
+                                    placeholder="Enter Fifth Subject Mark">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Sixth Subject Name  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="sixth_sub_name" class="form-label
+                            ">Sixth Subject Name</label>
+                                <input type="text" class="form-control" id="sixth_sub_name" name="sixth_sub_name"
+                                    placeholder="Enter Sixth Subject Name">
+                            </div>
+
+                            <!-- Sixth Subject Code  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="sixth_sub_code" class="form-label
+                            ">Sixth Subject Code</label>
+                                <input type="text" class="form-control" id="sixth_sub_code" name="sixth_sub_code"
+                                    placeholder="Enter Sixth Subject Code">
+                            </div>
+
+                            <!-- Sixth Subject Mark  -->
+                            <div class="mb-3 col-md-4">
+                                <label for="sixth_sub_mark" class="form-label
+                            ">Sixth Subject Mark</label>
+                                <input type="number" class="form-control" id="sixth_sub_mark" name="sixth_sub_mark"
+                                    placeholder="Enter Sixth Subject Mark">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Total Max Mark  -->
+                            <div class="mb-3 col-md-2">
+                                <label for="total_max_mark" class="form-label
+                            ">Total Max Mark</label>
+                                <input type="number" class="form-control" id="total_max_mark" name="total_max_mark"
+                                    placeholder="Enter Total Max Mark">
+                            </div>
+
+                            <!-- Total Obtained Mark -->
+                            <div class="mb-3 col-md-2">
+                                <label for="total_obt_mark" class="form-label
+                            ">Total Obtained Mark</label>
+                                <input type="number" class="form-control" id="total_obt_mark" name="total_obt_mark"
+                                    placeholder="Enter Total Obtained Mark">
+                            </div>
+
+                            <!-- Total Subjects  -->
+                            <!-- select  -->
+                            <div class="mb-3 col-md-2">
+                                <label for="total_sub" class="form-label
+                            ">Select Total Subjects</label>
+                            <!-- select  -->
+                            <select class="form-select" aria-label="Default select example" id="total_sub" name="total_sub">
+                                <option value="">Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                            </div>
+                            
+                            <!-- Percentage  -->
+                            <div class="mb-3 col-md-2">
+                                <label for="percentage" class="form-label
+                            ">Percentage</label>
+                                <input type="number" class="form-control" id="percentage" name="percentage"
+                                    placeholder="Enter Percentage">
+                            </div>
+
+                            <!-- Result  -->
+                            <div class="mb-3 col-md-2">
+                                <label for="result" class="form-label
+                            ">Result</label>
+                                <input type="text" class="form-control" id="result" name="result"
+                                    placeholder="Enter Result">
+                            </div>
+
+                            <!-- Division -->
+                            <div class="mb-3 col-md-2">
+                                <label for="division" class="form-label
+                            ">Division</label>
+                                <input type="text" class="form-control" id="division" name="division"
+                                    placeholder="Enter Division">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary w-50 my-4 shadow">Submit</button>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
